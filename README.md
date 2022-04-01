@@ -18,7 +18,7 @@ HTML5 and CSS3
 plataform: Vscode
 ```
     
-<img alt="Visual Studio Code" src="![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)"/>
+<img alt="Visual Studio Code" src="https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
 
 
 </div>
