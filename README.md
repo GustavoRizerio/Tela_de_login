@@ -6,7 +6,7 @@
 
 <div align="center">
 
-The **clipboard-landing-page** is a project made with HTML5 and CSS3
+The **Tela_de_login** is a project made with React Native
 </div> 
 
 ## :rocket: Technology
@@ -14,7 +14,7 @@ The **clipboard-landing-page** is a project made with HTML5 and CSS3
 <div align="center">
 
 ```sh
-HTML5 and CSS3
+React Native
 plataform: Vscode
 ```
     
