@@ -1,35 +1,56 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, SafeAreaView, Button, Image } from 'react-native';
+import React from 'react';
+import { Text, View, StyleSheet, Pressable, SafeAreaView, TextInput, Image } from 'react-native';
 
-export default function App() {
+export default function Button(props) {
+  const { onPress, title = 'CONTINUAR' } = props;
   return (
     <SafeAreaView style={styles.container}>
-      <View style={[styles.card, styles.shadowProp]}>
-        <View>
-          <View style={styles.Image}>
-            <Image
-              style={{ width: 80, height: 80 }}
-              source={require('./assets/Logo.png')}
-            />
+      <View style={styles.Image}>
+        <Image
+          style={{ width: 120, height: 120 }}
+          source={require('./assets/Logo.png')}
+          />
+        </View>
+       <View style={[styles.card, styles.shadowProp]}>
+          <View style={styles.containerTitle}>
+            <Text style={styles.Title}>
+              Faça seu login
+            </Text>
           </View>
           <View>
-            <Text style={styles.Text}>
-              Email:
-            </Text>
-            <TextInput style={styles.textInput}/>
-            <Text style={styles.Text}>
-              Senha:
-            </Text>
-            <TextInput style={styles.textInput}/>
-          </View>
-          <View style={styles.containerButton}>
-            <Button
-            title='Login'
-            color='purple'
+            <Text style={styles.Text}>CPF</Text>
+            <TextInput
+            style={styles.textInput}
+            label="CPF"
+            placeholder='000.000.000-00'
             />
           </View>
+
+          <View>
+            <Text style={[styles.Text, styles.senha]}>Senha</Text>
+            <TextInput
+            style={styles.textInput}
+            label="CPF"
+            placeholder='Sua senha'
+            />
+          </View>
+
+         <View style={[styles.containerButton]}>
+            <Pressable style={styles.button} onPress={onPress}>
+              <Text style={[styles.text]}>{title}</Text>
+            </Pressable>
+          </View>
+          <View style={styles.containerbottomText}>
+            <Text style={styles.bottomText}>
+              Esqueci minha senha
+            </Text>
+          </View>
+          <View style={styles.containerbottomText}>
+            <Text style={styles.bottomText}>
+              Ainda não sou cliente 
+            </Text>
+          </View>
         </View>
-      </View>
     </SafeAreaView>
   );
 }
@@ -37,34 +58,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#FBEFEF',
+    backgroundColor: '#612F74',
     alignItems: 'center',
     justifyContent: 'center',
   },
   Image:{
-    marginTop: 10,
-    marginBottom: 20,
     alignItems: 'center',
-  },
-  Text:{
-    marginTop: 10,
-    fontSize: 19,
-    fontWeight: 'bold',
-    marginLeft: 6,
-  },
-  textInput:{
-    flexDirection: 'row',
-    width: 270,
-    height:25,
-    borderColor: '#000',
-    borderWidth:1,
-    borderRadius: 10,
-    marginTop: 6,
-    marginLeft: 6,
+    top: 25,
   },
   card: {
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: 4,
     paddingVertical: 45,
     paddingHorizontal: 25,
     width: '80%',
@@ -75,9 +79,61 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.45,
     shadowRadius: 20,
   },
-  containerButton: {
+  containerTitle:{
+    marginTop: 10,
+    marginBottom: 20,
+    alignItems: 'center',
+  },
+  Title:{
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  textInput:{
+    width: '97%',
+    padding: 2,
+    borderColor: '#000',
+    borderBottomWidth:1,
+    marginTop: 6,
+    marginBottom: 6,
+    marginLeft: 4,
+  },
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 2,
+    elevation: 3,
+    borderColor: '#46244C',
+    borderWidth: 1,
     marginTop: 30,
-    width: '95%',
-    marginLeft: 9,
+    marginBottom: 15,
+  },
+  Text:{
+    marginTop: 10,
+    marginBottom: 10,
+    fontSize: 19,
+    fontWeight: 'bold',
+    marginLeft: 6,
+  },
+  senha:{
+    marginTop: 30,
+   
+  },
+  text: {
+    fontSize: 13,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: '#46244C',
+  },
+  bottomText:{
+    color: '#612F74',
+    
+  },
+  containerbottomText:{
+    alignItems: 'center',
+    margin: 8,
+    fontWeight: 'bold',
   },
 });
